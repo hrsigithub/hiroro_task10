@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(0..<PrefData.count) { index in
+                ForEach(0..<self.PrefData.count) { index in
                     HStack {
                         Text(self.PrefData[index])
                         Spacer()
@@ -29,7 +29,7 @@ struct ContentView: View {
                     }
                     .listRowInsets(.init(top: 0, leading: 2, bottom: 0, trailing: 2))
                     .frame(width: nil, height: 35, alignment: .center)
-                    .background(cellColor[index % cellColor.count])
+                    .background(self.cellColor[index % self.cellColor.count])
                 }
 
             }.environment(\.defaultMinListRowHeight, 0)
