@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    private let cellbackground = [
+    private let cellColor = [
         Color(red: 0.7, green: 0.9, blue: 0.5, opacity: 0.5),
         Color(red: 0.4, green: 0.7, blue: 0.8, opacity: 0.5),
         Color(red: 0.9, green: 0.4, blue: 0.5, opacity: 0.5)
@@ -27,13 +27,12 @@ struct ContentView: View {
                         Spacer()
                         Text("\(index + 1)番目の都道府県です")
                     }
-                    .frame(width: nil, height: 30, alignment: .center)
-                    .background(cellbackground[index % cellbackground.count])
-//                    cellidentifiers[indexPath.row % cellKindsOfNumber]
+                    .listRowInsets(.init(top: 0, leading: 2, bottom: 0, trailing: 2))
+                    .frame(width: nil, height: 35, alignment: .center)
+                    .background(cellColor[index % cellColor.count])
                 }
-                //.listRowInsets(.init(top: 0, leading: 5, bottom: 0, trailing: 5))
 
-            }//.environment(\.defaultMinListRowHeight, 0)
+            }.environment(\.defaultMinListRowHeight, 0)
         }
     }
 }
